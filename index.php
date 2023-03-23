@@ -43,22 +43,22 @@
 <section class="container mt-5">
     <h2>Most Wanted</h2>
     <div class="row">
-        <!-- Replace the 'src' attribute with the actual image paths -->
         <div class="col-md-4">
-            <img src="img/wanted1.jpg" alt="Most Wanted 1" class="img-fluid">
-            <h3>John Doe</h3>
-            <p>Wanted for robbery, assault, and other charges.</p>
+            <img src="assets/images/Putin.jpg" alt="Most Wanted 1" class="img-fluid">
+            <h3>Vladimir Putin</h3>
+            <p>Wanted for multiple human rights violations, corruption, and undermining democracy.</p>
         </div>
         <div class="col-md-4">
-            <img src="img/wanted2.jpg" alt="Most Wanted 2" class="img-fluid">
-            <h3>Jane Smith</h3>
-            <p>Wanted for fraud, identity theft, and other charges.</p>
+            <img src="assets/images/Ruja.jpg" alt="Most Wanted 2" class="img-fluid">
+            <h3>Ruja Ignatova</h3>
+            <p>Wanted for running a multi-billion dollar Ponzi scheme through OneCoin cryptocurrency.</p>
         </div>
         <div class="col-md-4">
-            <img src="img/wanted3.jpg" alt="Most Wanted 3" class="img-fluid">
-            <h3>Robert Brown</h3>
-            <p>Wanted for burglary, drug trafficking, and other charges.</p>
+            <img src="assets/images/wanted3.jpg" alt="Most Wanted 3" class="img-fluid">
+            <h3>Joseph Kony</h3>
+            <p>Wanted for crimes against humanity, including abduction, sexual enslavement, and child soldier recruitment.</p>
         </div>
+
     </div>
 </section>
 
