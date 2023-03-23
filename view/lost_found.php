@@ -1,12 +1,13 @@
 <?php
+session_start();
+require_once '../includes/functions.php';
 
 if (!isAuthenticated()) {
     header("Location: login.php");
     exit();
 }
 
-require_once '../includes/functions.php';
-$lost_found = getAllLostAndFound(); // Implement this function in functions.php
+$lost_found = getAllReports('lost_and_found'); // Implement this function in functions.php
 ?>
 
 <!DOCTYPE html>
