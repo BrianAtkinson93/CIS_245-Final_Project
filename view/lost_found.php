@@ -3,7 +3,7 @@ session_start();
 require_once '../includes/functions.php';
 
 if (!isAuthenticated()) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 

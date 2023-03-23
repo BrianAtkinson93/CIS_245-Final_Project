@@ -11,10 +11,10 @@
                 <a class="nav-link" href="../index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="view/lost_found.php">Lost & Found</a>
+                <a class="nav-link" href="../view/lost_found.php">Lost & Found</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="view/missing_persons.php">Missing Persons</a>
+                <a class="nav-link" href="../view/missing_persons.php">Missing Persons</a>
             </li>
             <!-- Add more menu items as needed -->
         </ul>

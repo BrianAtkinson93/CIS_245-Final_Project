@@ -13,6 +13,10 @@ if ($user) {
     // Set session variables
     $_SESSION['email'] = $user['email'];
     $_SESSION['password'] = $user['password'];
+    $_SESSION['user_id'] = $user['id']; // Replace $user_id with the actual user ID from the database
+    $_SESSION['username'] = $user['username']; // Replace $username with the actual username from the database
+    $_SESSION['role'] = $user['role']; // Replace $role with the actual user role from the database
+
 
     if ($user['role'] === 'admin') {
         header("Location: admin/admin_index.php");
