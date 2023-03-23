@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'includes/config.php';
-require_once 'includes/functions.php';
+require_once '../includes/config.php';
+require_once '../includes/functions.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -15,9 +15,9 @@ if ($user) {
     $_SESSION['password'] = $user['password'];
 
     if ($user['role'] === 'admin') {
-        header("Location: admin_index.php");
+        header("Location: ../admin/admin_index.php");
     } else {
-        header("Location: index.php");
+        header("Location: ../index.php");
     }
 } else {
     // Redirect back to the login page with an error message

@@ -30,8 +30,6 @@ function registerUser($username, $email, $password) {
 }
 
 
-
-
 function getAllReports($table_name)
 {
     global $conn;
