@@ -6,6 +6,20 @@ function isAuthenticated()
     return isset($_SESSION['user_id']) && isset($_SESSION['username']) && isset($_SESSION['role']);
 }
 
+function getUserByEmailAndPassword($email, $password) {
+    global $conn;
+    $query = "SELECT * FROM users WHERE email = ? AND password = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('ss', $email, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        return $result->fetch_assoc();
+    } else {
+        return false;
+    }
+}
+
 
 function getAllReports($table_name)
 {
