@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<?php require_once 'includes/functions.php'; ?>
+<?php
+require_once 'includes/functions.php';
+session_start();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,9 +11,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 <body>
+<!-- Hamburger Menu -->
 <!-- Hamburger Menu -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">OCRS</a>
@@ -32,9 +37,18 @@
             <!-- Add more menu items as needed -->
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="login.php">Login</a>
-            </li>
+            <?php if (!isset($_SESSION['email'])): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.php">Register</a>
+                </li>
+            <?php else: ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li>
+            <?php endif; ?>
         </ul>
     </div>
 </nav>
@@ -56,7 +70,8 @@
         <div class="col-md-4">
             <img src="assets/images/wanted3.jpg" alt="Most Wanted 3" class="img-fluid">
             <h3>Joseph Kony</h3>
-            <p>Wanted for crimes against humanity, including abduction, sexual enslavement, and child soldier recruitment.</p>
+            <p>Wanted for crimes against humanity, including abduction, sexual enslavement, and child soldier
+                recruitment.</p>
         </div>
 
     </div>
