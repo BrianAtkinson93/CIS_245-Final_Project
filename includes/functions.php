@@ -20,20 +20,15 @@ function getUserByEmailAndPassword($email, $password) {
     }
 }
 
-function registerUser($name, $email, $password) {
+function registerUser($username, $email, $password) {
     global $conn;
-
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
-
-    if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("sss", $name, $email, $hashed_password);
-        if ($stmt->execute()) {
-            return true;
-        }
-    }
-    return false;
+    $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $username, $email, $password);
+    $result = $stmt->execute();
+    $stmt->close();
+    return $result;
 }
+
 
 
 

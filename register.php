@@ -6,8 +6,8 @@
 <body>
 <h1>Register</h1>
 <form action="register_handler.php" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
     <br>
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
