@@ -1,4 +1,10 @@
 <?php
+
+if (!isAuthenticated()) {
+    header("Location: login.php");
+    exit();
+}
+
 require_once '../includes/functions.php';
 $lost_found = getAllLostAndFound(); // Implement this function in functions.php
 ?>
