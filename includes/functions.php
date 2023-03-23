@@ -6,7 +6,8 @@ function isAuthenticated()
     return isset($_SESSION['user_id']) && isset($_SESSION['username']) && isset($_SESSION['role']);
 }
 
-function getUserByEmailAndPassword($email, $password) {
+function getUserByEmailAndPassword($email, $password)
+{
     global $conn;
     $query = "SELECT * FROM users WHERE email = ? AND password = ?";
     $stmt = $conn->prepare($query);
@@ -20,12 +21,29 @@ function getUserByEmailAndPassword($email, $password) {
     }
 }
 
-function registerUser($username, $email, $password) {
+function registerUser($username, $email, $password)
+{
     global $conn;
     $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $username, $email, $password);
     $result = $stmt->execute();
     $stmt->close();
+    return $result;
+}
+
+function getMostWanted($limit)
+{
+    global $conn;
+    $limitCondition = $limit === "ALL" ? "" : "LIMIT ?";
+    $query = "SELECT * FROM most_wanted ORDER BY id DESC $limitCondition";
+    $stmt = $conn->prepare($query);
+
+    if ($limit !== "ALL") {
+        $stmt->bind_param('i', $limit);
+    }
+
+    $stmt->execute();
+    $result = $stmt->get_result();
     return $result;
 }
 

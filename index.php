@@ -13,22 +13,21 @@ require_once 'includes/functions.php';
     <h2>Most Wanted</h2>
     <div class="row">
         <div class="col-md-4">
-            <img src="assets/images/Putin.jpg" alt="Most Wanted 1" class="img-fluid">
+            <img src="assets/images/Putin.jpg" alt="Most Wanted 1" class="img-fluid uniform-image">
             <h3>Vladimir Putin</h3>
             <p>Wanted for multiple human rights violations, corruption, and undermining democracy.</p>
         </div>
         <div class="col-md-4">
-            <img src="assets/images/Ruja.jpg" alt="Most Wanted 2" class="img-fluid">
+            <img src="assets/images/RujaIgnatova.jpg" alt="Most Wanted 2" class="img-fluid uniform-image">
             <h3>Ruja Ignatova</h3>
             <p>Wanted for running a multi-billion dollar Ponzi scheme through OneCoin cryptocurrency.</p>
         </div>
         <div class="col-md-4">
-            <img src="assets/images/wanted3.jpg" alt="Most Wanted 3" class="img-fluid">
+            <img src="assets/images/JosephKony.jpg" alt="Most Wanted 3" class="img-fluid uniform-image">
             <h3>Joseph Kony</h3>
             <p>Wanted for crimes against humanity, including abduction, sexual enslavement, and child soldier
                 recruitment.</p>
         </div>
-
     </div>
 </section>
 
