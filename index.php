@@ -42,7 +42,7 @@ require_once 'includes/functions.php';
             $image_path = 'images/' . $row['image_filename'];
             ?>
             <div class="col-md-4">
-                <img src="<?php echo $image_path; ?>" alt="Missing Person <?php echo $row['id']; ?>" class="img-fluid">
+                <img src="<?php echo $image_path; ?>" alt="Missing Person <?php echo $row['id']; ?>" class="img-fluid uniform-image">
                 <h3><?php echo $row['name']; ?></h3>
                 <p>Age: <?php echo $row['age']; ?>, Last seen: <?php echo $row['last_seen']; ?></p>
                 <p>Description: <?php echo $row['description']; ?></p>
