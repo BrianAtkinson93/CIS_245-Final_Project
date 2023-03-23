@@ -20,6 +20,22 @@ function getUserByEmailAndPassword($email, $password) {
     }
 }
 
+function registerUser($name, $email, $password) {
+    global $conn;
+
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("sss", $name, $email, $hashed_password);
+        if ($stmt->execute()) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 
 function getAllReports($table_name)
 {

@@ -1,11 +1,3 @@
-<?php
-require_once 'includes/functions.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Implement your registration logic
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +5,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 <h1>Register</h1>
-<form action="" method="post">
-    <!-- Add your registration form fields -->
-    <button type="submit">Register</button>
+<form action="register_handler.php" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <input type="submit" value="Register">
 </form>
 </body>
 </html>
