@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require_once 'includes/functions.php'; ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -60,6 +61,27 @@
         </div>
     </div>
 </section>
+
+<!-- Missing Persons Section -->
+<section class="container mt-5">
+    <h2>Missing Persons</h2>
+    <div class="row">
+        <?php
+        $missing_persons = getAllReports('missing_persons');
+        while ($row = $missing_persons->fetch_assoc()):
+            // Construct the image path using the folder path and the image filename
+            $image_path = 'images/' . $row['image_filename'];
+            ?>
+            <div class="col-md-4">
+                <img src="<?php echo $image_path; ?>" alt="Missing Person <?php echo $row['id']; ?>" class="img-fluid">
+                <h3><?php echo $row['name']; ?></h3>
+                <p>Age: <?php echo $row['age']; ?>, Last seen: <?php echo $row['last_seen']; ?></p>
+                <p>Description: <?php echo $row['description']; ?></p>
+            </div>
+        <?php endwhile; ?>
+    </div>
+</section>
+
 
 <!-- Additional relevant information -->
 <section class="container mt-5">
