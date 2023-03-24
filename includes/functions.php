@@ -6,8 +6,7 @@ function isAuthenticated()
     return isset($_SESSION['user_id']) && isset($_SESSION['username']) && isset($_SESSION['role']);
 }
 
-function getUserByEmailAndPassword($email, $password)
-{
+function getUserByEmailAndPassword($email, $password) {
     global $conn;
     $query = "SELECT * FROM users WHERE email = ? AND password = ?";
     $stmt = $conn->prepare($query);
@@ -21,8 +20,7 @@ function getUserByEmailAndPassword($email, $password)
     }
 }
 
-function registerUser($username, $email, $password)
-{
+function registerUser($username, $email, $password) {
     global $conn;
     $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $username, $email, $password);
