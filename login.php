@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-</head>
+<?php
+require_once 'includes/config.php';
+include 'includes/header.php';
+?>
 <body>
 <h1>Login</h1>
 <form action="login_handler.php" method="POST">

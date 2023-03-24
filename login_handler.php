@@ -21,7 +21,7 @@ if ($user) {
     if ($user['role'] === 'admin') {
         header("Location: admin/admin_index.php");
     } else {
-        header("Location: /index.php");
+        header("Location: index.php");
     }
 } else {
     // Redirect back to the login page with an error message
