@@ -1,30 +1,41 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include 'connection.php';
+
 session_start();
-require_once 'includes/config.php';
-require_once 'includes/functions.php';
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+if (isset($_POST['submit'])) {
+    // Get the user's email and password from the form
+    $email = $_POST['username'];
+    $password = $_POST['password'];
 
-$user = getUserByEmailAndPassword($email, $password);
-var_dump($user); // check the value of $user
+    // Validate the user's credentials against the database
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = $conn->query($sql);
 
-if ($user) {
-    // Set session variables
-    $_SESSION['email'] = $user['email'];
-    $_SESSION['password'] = $user['password'];
-    $_SESSION['user_id'] = $user['id']; // Replace $user_id with the actual user ID from the database
-    $_SESSION['username'] = $user['username']; // Replace $username with the actual username from the database
-    $_SESSION['role'] = $user['role']; // Replace $role with the actual user role from the database
-
-
-    if ($user['role'] === 'admin') {
-        header("Location: admin/admin_index.php");
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if ($password == $row['password']) {
+            // Password is correct, set the session variable and redirect to the main page
+            $_SESSION['email'] = $email;
+            $_SESSION['first_name'] = $row['first_name'];
+            $_SESSION['user_role'] = $row['user_role'];
+            header('Location: main.php');
+            exit;
+        } else {
+            $message = "Incorrect password";
+        }
     } else {
-        header("Location: index.php");
+        $message = "User not found";
     }
-} else {
-    // Redirect back to the login page with an error message
-    $_SESSION['error'] = "Invalid email or password.";
-    header("Location: login.php");
 }
+
+// If we get here, the login failed
+//echo the error message
+echo $message;
+header('Location: login.php');
+exit;
+
+?>

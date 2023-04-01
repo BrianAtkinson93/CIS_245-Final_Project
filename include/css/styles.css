@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+.card {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.dropdown-menu {
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 0;
+    padding: 0;
+}
+
+.dropdown-item {
+    padding: .5rem 1rem;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #e9ecef;
+}
+
+
+.most-wanted-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.most-wanted-widget {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.most-wanted-widget h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.most-wanted-widget p {
+    font-size: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.most-wanted-widget img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.most-wanted-widget a {
+    margin-top: auto;
+    text-align: center;
+    color: #007bff;
+}
+
+/* Hamburger menu styles */
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+}
+
+.menu-container .menu-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.menu-container .menu-items {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 1;
+    background-color: #f8f9fa;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.menu-container .menu-items a {
+    display: block;
+    margin-bottom: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.menu-container .menu-items a:hover {
+    text-decoration: underline;
+}
+
+/* Login/logout styles */
+.user-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.user-container a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.user-container a:hover {
+    text-decoration: underline;
+}
+
+.registration-form {
+    background-color: #F5F5F5;
+    width: 25%;
+    margin: 120px auto;
+    padding: 50px;
+}
+
+.registration-form label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.registration-form input {
+    display: inline-block;
+    width: 250px;
+}
+
+.registration-form button {
+    margin-top: 20px;
+}
+
