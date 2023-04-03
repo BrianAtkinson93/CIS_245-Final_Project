@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['email'] = $email;
             $_SESSION['first_name'] = $row['first_name'];
             $_SESSION['user_role'] = $row['user_role'];
-            header('Location: ../main.php');
+            header('Location: ../view/main.php');
             exit;
         } else {
             $message = "Incorrect password";
@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
 // If we get here, the login failed
 //echo the error message
 echo $message;
-header('Location: login.php');
+header('Location: ../login.php');
 exit;
 
 ?>

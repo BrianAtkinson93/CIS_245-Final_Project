@@ -16,7 +16,7 @@ include 'include/config/connection.php';
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <title></title>
+    <title>Guest Home</title>
     <style>
         * {
             margin: 0;
@@ -289,7 +289,7 @@ include 'include/config/connection.php';
                     <a class="nav-link" href="login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Register.php">Register</a>
+                    <a class="nav-link" href="register.php">Register</a>
                 </li>
             <?php else: ?>
                 <li class="nav-item">
@@ -303,7 +303,7 @@ include 'include/config/connection.php';
         <ul>
             <li class="nav-item"><a class="nav-link" href="Lost&Found.php">Lost&Found</a></li>
             <li class="nav-item"><a class="nav-link" href="view/missing_person.php">Missing Person</a></li>
-            <li class="nav-item"><a class="nav-link" href="Most wanted people.php">Most Wanted People</a></li>
+            <li class="nav-item"><a class="nav-link" href="view/most_wanted.php">Most Wanted People</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
         </ul>
 
