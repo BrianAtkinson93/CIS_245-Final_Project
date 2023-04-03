@@ -63,6 +63,8 @@ if (!isset($_SESSION['email'])) {
         echo '<img src="../' . $row['image_path'] . '" alt="Missing Person">';
         echo '<div>';
         echo '<h3>' . $row['name'] . '</h3>';
+        echo '<p><strong>Gender:</strong> ' . $row['gender'] . '</p>';
+        echo '<p><strong>Last Seen Location:</strong> ' . $row['last_seen_location'] . '</p>';
         echo '<p>' . $row['description'] . '</p>';
 
         // Add the delete button for admin users
@@ -74,6 +76,8 @@ if (!isset($_SESSION['email'])) {
         echo '</div>';
     }
     ?>
+
+    <!--ADMIN ONLY-->
     <?php
 
     // Show the "Add Missing Person" form only if the user is an admin
@@ -86,8 +90,20 @@ if (!isset($_SESSION['email'])) {
         echo '<input type="text" class="form-control" id="name" name="name" required>';
         echo '</div>';
         echo '<div class="form-group">';
+        echo '<label for="gender">Gender:</label>';
+        echo '<select class="form-control" id="gender" name="gender" required>';
+        echo '<option value="">-- Select Gender --</option>';
+        echo '<option value="male">Male</option>';
+        echo '<option value="female">Female</option>';
+        echo '</select>';
+        echo '</div>';
+        echo '<div class="form-group">';
         echo '<label for="description">Description:</label>';
         echo '<textarea class="form-control" id="description" name="description" rows="5" required></textarea>';
+        echo '</div>';
+        echo '<div class="form-group">';
+        echo '<label for="last_seen_location">Last Seen Location:</label>';
+        echo '<input type="text" class="form-control" id="last_seen_location" name="last_seen_location" required>';
         echo '</div>';
         echo '<div class="form-group">';
         echo '<label for="image">Image:</label>';

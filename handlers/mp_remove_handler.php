@@ -16,32 +16,26 @@ if (!isset($_GET['id'])) {
 
 $id = mysqli_real_escape_string($conn, $_GET['id']);
 
-// Get the image path from the database
-$query = "SELECT image_path FROM most_wanted WHERE id = '$id'";
+// Get the image path for the missing person
+$query = "SELECT image_path FROM missing_persons WHERE id = '$id'";
 $result = mysqli_query($conn, $query);
-
-if (!$result) {
-    echo "Error getting image path: " . mysqli_error($conn);
-    exit;
-}
-
 $row = mysqli_fetch_assoc($result);
 $image_path = $row['image_path'];
 
-// Delete the most wanted entry from the database
-$query = "DELETE FROM most_wanted WHERE id = '$id'";
+// Delete the missing person from the database
+$query = "DELETE FROM missing_persons WHERE id = '$id'";
 $result = mysqli_query($conn, $query);
 
 if (!$result) {
-    echo "Error deleting most wanted entry: " . mysqli_error($conn);
-    exit;
+    echo "Error deleting missing person: " . mysqli_error($conn);
 }
 
-// Remove the associated image file from the server
-if (file_exists($image_path)) {
-    unlink($image_path);
+// Delete the associated image
+if (file_exists('../images/missing_persons/' . $image_path)) {
+    unlink('../images/missing_persons/' . $image_path);
 }
 
 mysqli_close($conn);
-header('Location: ../view/most_wanted.php');
+header('Location: ../view/missing_person.php');
 exit;
+?>

@@ -7,6 +7,23 @@ if (!isset($_SESSION['email'])) {
     header('Location: ../login.php');
     exit;
 }
+
+
+//// Get the three newest items from the lost_found table
+//$lf_query = "SELECT * FROM lost_found ORDER BY id DESC LIMIT 3";
+//$lf_result = mysqli_query($conn, $lf_query);
+
+// Get the three most wanted from the most_wanted table
+$mw_query = "SELECT * FROM most_wanted ORDER BY id DESC LIMIT 3";
+$mw_result = mysqli_query($conn, $mw_query);
+
+// Get the three first missing persons from the missing_persons table
+$mp_query = "SELECT * FROM missing_persons ORDER BY id ASC LIMIT 3";
+$mp_result = mysqli_query($conn, $mp_query);
+
+// Get the lost items from the lost_items table
+$lf_query = "SELECT * FROM lost_items ORDER BY id DESC LIMIT 3";
+$lf_result = mysqli_query($conn, $lf_query);
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +33,7 @@ if (!isset($_SESSION['email'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?php echo $_SESSION['first_name']; ?>'s Home</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../include/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../include/css/styles.css">
     <link rel="icon" type="image/png" href="../images/webpage/hacker.png">
 </head>
@@ -64,27 +81,7 @@ if (!isset($_SESSION['email'])) {
     </div>
 </nav>
 
-<?php
-
-//// Get the three newest items from the lost_found table
-//$lf_query = "SELECT * FROM lost_found ORDER BY id DESC LIMIT 3";
-//$lf_result = mysqli_query($conn, $lf_query);
-
-// Get the three most wanted from the most_wanted table
-$mw_query = "SELECT * FROM most_wanted ORDER BY id DESC LIMIT 3";
-$mw_result = mysqli_query($conn, $mw_query);
-
-// Get the three first missing persons from the missing_persons table
-$mp_query = "SELECT * FROM missing_persons ORDER BY id ASC LIMIT 3";
-$mp_result = mysqli_query($conn, $mp_query);
-
-// Get the lost items from the lost_items table
-$lf_query = "SELECT * FROM lost_items ORDER BY id DESC LIMIT 3";
-$lf_result = mysqli_query($conn, $lf_query);
-
-
-?>
-
+<!--Most wanted area-->
 <div class="container">
     <h2>Most Wanted</h2>
     <div class="row">
@@ -109,6 +106,7 @@ $lf_result = mysqli_query($conn, $lf_query);
     </div>
 </div>
 
+<!--missing person area-->
 <div class="container">
     <h2>Missing Persons</h2>
     <div class="row">
@@ -132,7 +130,7 @@ $lf_result = mysqli_query($conn, $lf_query);
     </div>
 </div>
 
-
+<!--lost items area-->
 <div class="container">
     <h2>Lost Items</h2>
     <div class="row">
@@ -158,6 +156,7 @@ $lf_result = mysqli_query($conn, $lf_query);
     </div>
 </div>
 
+<!--JavaScript for the popup // overlay-->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var scrollPrompt = document.getElementById("scroll-prompt");
@@ -192,9 +191,7 @@ $lf_result = mysqli_query($conn, $lf_query);
     });
 </script>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/scripts.js"></script>
+<script src="../include/bootstrap-4.5.3-dist/js/bootstrap.min.js"></scipt>
+
 </body>
 </html>

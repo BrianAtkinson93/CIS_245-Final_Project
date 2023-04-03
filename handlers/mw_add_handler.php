@@ -30,10 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $image_name = uniqid() . '-' . $image_name;
 
             // Move the image to the uploads folder
-            move_uploaded_file($image_tmp, 'images/' . $image_name);
+            move_uploaded_file($image_tmp, '../images/most_wanted/' . $image_name);
 
             // Insert data into database
-            $query = "INSERT INTO most_wanted (name, offence_details, image_path) VALUES ('$name', '$offence_details', 'images/$image_name')";
+            $query = "INSERT INTO most_wanted (name, offence_details, image_path) VALUES ('$name', '$offence_details', 'images/most_wanted/$image_name')";
             $result = mysqli_query($conn, $query);
 
             // Redirect to the most wanted page
@@ -44,7 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-move_uploaded_file($image_tmp, '../images/' . $image_name);
 
 // Check if file is uploaded successfully
 if (!$result) {

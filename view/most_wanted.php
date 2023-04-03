@@ -37,13 +37,13 @@ if (!isset($_SESSION['email'])) {
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../view/main.php">Home</a>
+                <a class="nav-link" href="main.php">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../Lost&Found.php">Lost&Found</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../view/missing_person.php">Missing Persons</a>
+                <a class="nav-link" href="missing_person.php">Missing Persons</a>
             </li>
         </ul>
         <div class="user-container ml-auto">
