@@ -19,6 +19,14 @@ if (!isset($_SESSION['email'])) {
 </head>
 <body>
 
+<!-- Fade everything out if prompt -->
+<div id="overlay"></div>
+
+<!-- prompt to scroll -->
+<div id="scroll-prompt" class="scroll-prompt">
+    <p>Scroll down to see more content</p>
+</div>
+
 <!-- Hamburger menu -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="main.php"><?php echo $_SESSION['first_name']; ?>'s Home</a>
@@ -147,6 +155,39 @@ $lf_result = mysqli_query($conn, $lf_query);
     </div>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var scrollPrompt = document.getElementById("scroll-prompt");
+        var overlay = document.getElementById("overlay");
+        var promptTimeout;
+        var userHasScrolled = false;
+
+        function showPrompt() {
+            scrollPrompt.classList.add("show");
+            overlay.style.display = 'block';
+        }
+
+        function hidePrompt() {
+            scrollPrompt.classList.remove("show");
+            overlay.style.display = 'none';
+        }
+
+        window.addEventListener("scroll", function () {
+            userHasScrolled = true;
+            hidePrompt();
+            clearTimeout(promptTimeout);
+        });
+
+        if (!userHasScrolled) {
+            setTimeout(function () {
+                showPrompt();
+                promptTimeout = setTimeout(function () {
+                    hidePrompt();
+                }, 3000); // Hide the widget after 3 seconds if the user hasn't scrolled
+            }, 1000); // Show the widget after 1 second
+        }
+    });
+</script>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
