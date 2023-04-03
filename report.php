@@ -16,13 +16,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="index3.php">Home</a>
+                <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="Lost&Found.php">Lost & Found</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Report Missing Person</a>
+                <a class="nav-link" href="">Report Missing Person</a>
             </li>
         </ul>
         <div class="user-container">

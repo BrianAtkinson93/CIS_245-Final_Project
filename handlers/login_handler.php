@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include 'connection.php';
+include '../include/config/connection.php';
 
 session_start();
 
@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['email'] = $email;
             $_SESSION['first_name'] = $row['first_name'];
             $_SESSION['user_role'] = $row['user_role'];
-            header('Location: main.php');
+            header('Location: ../main.php');
             exit;
         } else {
             $message = "Incorrect password";

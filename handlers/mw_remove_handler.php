@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once 'connection.php';
+include '../include/config/connection.php';
 
 // Redirect to login page if user is not logged in or user is not an admin
 if (!isset($_SESSION['email']) || $_SESSION['user_role'] !== 'admin') {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit;
 }
 
@@ -25,5 +25,5 @@ if (!$result) {
 }
 
 mysqli_close($conn);
-header('Location: Most wanted people.php');
+header('Location: ../view/most_wanted.php');
 exit;

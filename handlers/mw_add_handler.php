@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once 'connection.php';
+include '../include/config/connection.php';
 
 // Redirect to login page if user is not logged in
 if (!isset($_SESSION['email'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit;
 }
 
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-move_uploaded_file($image_tmp, 'images/' . $image_name);
+move_uploaded_file($image_tmp, '../images/' . $image_name);
 
 // Check if file is uploaded successfully
 if (!$result) {
@@ -52,6 +52,6 @@ if (!$result) {
 }
 
 // Redirect to the most wanted page
-header('Location: Most wanted people.php');
+header('Location: ../view/most_wanted.php');
 exit;
 ?>

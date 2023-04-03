@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+include 'include/config/connection.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -41,7 +41,7 @@ session_start();
 <body style="background-color: #8b0000;">
 <div id="form">
     <h4>Please Login</h4>
-    <form action="login_handler.php" method="post">
+    <form action="handlers/login_handler.php" method="post">
         <label for="ID">Email:</label>
         <input type="text" placeholder="username" name="username" required><br><br>
         <label for="password">Password:</label>

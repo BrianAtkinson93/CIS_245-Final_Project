@@ -189,30 +189,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
     <h1>Connect With Us</h1>
     <p>feel free to get in touch with us </p>
     <div class ="contact-box">
+        <form action="contactus_handler.php" method="post">
         <div class="contact-left">
             <h3>sent your request</h3>
             <form>
                 <div class="input-row">
                     <div class="input-group">
                         <label>Name</label>
-                        <input type = "text" >
+                        <input type = "text" name="name">
                     </div>
 
                     <div class="input-group">
                         <label>Phone</label>
-                        <input type = "text" >
+                        <input type = "text" name="phone">
                     </div>
                 </div>
 
                 <div class="input-row">
                     <div class="input-group">
                         <label>Email</label>
-                        <input type = "email" >
+                        <input type = "email" name="email">
                     </div>
 
                     <div class="input-group">
                         <label>subject</label>
-                        <input type = "text" >
+                        <input type = "text" name="subject">
                     </div>
                 </div>
                 <lebel>Message</lebel>
@@ -256,30 +257,30 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
             <div class="footer-col">
                 <h4>company</h4>
                 <ul>
-                    <li><a href="#">about us</a></li>
-                    <li><a href="#">our service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">programs</a></li>
-                </ul>
+                        <li><a href="index3.php">about us</a></li>
+                        <li><a href="Lost&Found.php">our service</a></li>
+                        <li><a href="contact.php">Privacy Policy</a></li>
+                        <li><a href="contact.php">programs</a></li>
+                    </ul>
             </div>
-            <div class="footer-col">
-                <h4>Get help</h4>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Lost&found</a></li>
-                    <li><a href="#">Missing person</a></li>
-                    <li><a href="#">Most wanted people</a></li>
-
-                </ul>
+                       <div class="footer-col">
+                    <h4>Get help</h4>
+                    <ul>
+                        <li><a href="register.php">FAQ</a></li>
+                        <li><a href="Lost&Found.php">Lost&found</a></li>
+                        <li><a href="view/missing_person.php">Missing person</a></li>
+                        <li><a href="Most wanted people">Most wanted people</a></li>
+                      
+                    </ul>
             </div>
-            <div class="footer-col">
-                <h4>Online Report</h4>
-                <ul>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Main</a></li>
-                    <li><a href="#">Report</a></li>
-                    <li><a href="#">login</a></li>
-                </ul>
+                       <div class="footer-col">
+                    <h4>Online Report</h4>
+                    <ul>
+                        <li><a href="Register.php">Register</a></li>
+                        <li><a href="index3.php">Main</a></li>
+                        <li><a href="contact.php">Report</a></li>
+                        <li><a href="login.php">login</a></li>
+                    </ul>
             </div>
             <div class="footer-col">
                 <h4>connect with us</h4>

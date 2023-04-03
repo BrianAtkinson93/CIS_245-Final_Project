@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to edit this template
--->
 <?php
-require_once 'connection.php';
+include 'include/config/connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $firstname = $_POST['firstname'];
@@ -60,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <input type="submit" name="create" value="Register"><br><br>
 
-            <button onclick="window.location.href = 'index3.php';">Return Home</button>
+            <button onclick="window.location.href = 'index.php';">Return Home</button>
         </div>
     </form>
 </div>
